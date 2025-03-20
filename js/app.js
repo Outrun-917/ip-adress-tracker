@@ -11,6 +11,8 @@ L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
   attribution: "© OpenStreetMap",
 }).addTo(map);
 
+L.marker([51.5, -0.09]).addTo(map);
+
 function getIpInfo(ipAddress) {
   fetch("/data/data.json")
     .then((res) => res.json())
@@ -32,6 +34,7 @@ function makeIpInfo(data) {
   $ipAddressInfoItemValue[3].textContent = data.isp;
 
   map.setView([data.location.lat, data.location.lng]);
+  L.marker([data.location.lat, data.location.lng]).addTo(map);
 }
 
 $ipAdressSubmit.addEventListener("click", (e) => {
@@ -40,4 +43,14 @@ $ipAdressSubmit.addEventListener("click", (e) => {
   const ipAddress = $ipAddressInput.value;
 
   getIpInfo(ipAddress);
+});
+
+$ipAdressSubmit.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    e.preventDefault();
+
+    const ipAddress = $ipAddressInput.value;
+
+    getIpInfo(ipAddress);
+  }
 });
