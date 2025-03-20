@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Eden School - IP Address Tracker</title>
+
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
+    <main class="main-wrapper">
+      <header class="main-header">
+        <div class="main-header-inner-wrapper">
+          <h1>IP Address Tracker</h1>
+
+          <form class="ip-address-form" action="">
+            <input
+              class="ip-address-input"
+              type="text"
+              placeholder="127.0.0.1"
+            />
+            <button class="ip-adress-submit" type="submit">
+              <img src="./assets/icon-arrow.svg" alt="" />
+            </button>
+          </form>
+
+          <ul class="ip-address-info">
+            <li class="ip-address-info-item">
+              <span class="ip-address-info-item-title">Ip address</span>
+              <span id="ip-address-value" class="ip-address-info-item-value"
+                >127.0.0.1</span
+              >
+            </li>
+            <li class="ip-address-info-item">
+              <span class="ip-address-info-item-title">Location</span>
+              <span id="ip-address-location" class="ip-address-info-item-value"
+                >Paris, France</span
+              >
+            </li>
+            <li class="ip-address-info-item">
+              <span class="ip-address-info-item-title">Timezone</span>
+              <span id="ip-address-timezone" class="ip-address-info-item-value"
+                >UTC + 1</span
+              >
+            </li>
+            <li class="ip-address-info-item">
+              <span class="ip-address-info-item-title">ISP</span>
+              <span id="ip-address-isp" class="ip-address-info-item-value"
+                >Chez moi</span
+              >
+            </li>
+          </ul>
+        </div>
+      </header>
+      <div id="map"></div>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+    <script src="./js/app.js"></script>
+  </body>
+</html>
